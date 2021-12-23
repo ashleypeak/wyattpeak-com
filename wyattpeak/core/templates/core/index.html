@@ -18,8 +18,11 @@
           <div class="col-sm-6 col-md-6 subpage-block">
             <div class="general-info">
               <h3>I'm Charles, nice to meet you!</h3>
+
               <p>Whether you want a small program to manage your accounts, or a website to host thousands, I'm your guy. I have fifteen years of experience in all areas of software development, TODO</p>
+
               <p>I pride myself on my communication, with both technical and general audiences. If you want something you can tinker with, I'll provide you with full documentation and test suites. You might want to see my <a href="#">code samples</a>. If you never want to see a line of code, I'll build it, put it on a website and you need never hear me say the word "API". You'll be more interested in my <a href="#">portfolio</a>.</p>
+
               <p>Whatever it is you want, I'm here to help. <a href="#">Contact me</a> to discuss, or for a quote - no obligations!</p>
             </div>
           </div>
@@ -387,173 +390,28 @@
             <li class="active">
               <a class="filter btn btn-sm btn-link active" data-group="all">All</a>
             </li>
-            <li>
-              <a class="filter btn btn-sm btn-link" data-group="web">Web</a>
-            </li>
-            <li>
-              <a class="filter btn btn-sm btn-link" data-group="software">Software</a>
-            </li>
+            {% for group in portfolio_groups %}
+              <li>
+                <a class="filter btn btn-sm btn-link" data-group="{{ group.name|lower }}">{{ group.name }}</a>
+              </li>
+            {% endfor %}
           </ul>
           <!-- End of Portfolio filter -->
 
           <!-- Portfolio Grid -->
           <div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
-
-            <!-- Portfolio Item 1 -->
-            <figure class="item" data-groups='["all", "web"]'>
-              <a class="ajax-page-load" href="{% url 'portfolio' 'occam' %}">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Tutor</h5>
-                  <small>Web</small>
-                  <i class="fa fa-code"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 1 -->
-
-            <!-- Portfolio Item 2 -->
-            <figure class="item" data-groups='["all", "software"]'>
-              <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Praesent Dolor Ex" class="lightbox mfp-iframe">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Email parser</h5>
-                  <small>Software</small>
-                  <i class="fa fa-desktop"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 2 -->
-
-            <!-- Portfolio Item 3 -->
-            <figure class="item" data-groups='["all","illustration"]'>
-              <a href="images/portfolio/3.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Illustration</small>
-                  <i class="fa fa-image"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 3 -->
-
-            <!-- Portfolio Item 4 -->
-            <figure class="item" data-groups='["all", "media"]'>
-              <a class="ajax-page-load" href="portfolio-1.html">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Media</small>
-                  <i class="fa fa-file-text-o"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 4 -->
-
-            <!-- Portfolio Item 5 -->
-            <figure class="item" data-groups='["all", "illustration"]'>
-              <a href="images/portfolio/5.jpg" class="lightbox" title="Aliquam Condimentum Magna Rhoncus">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Illustration</small>
-                  <i class="fa fa-image"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 5 -->
-
-            <!-- Portfolio Item 6 -->
-            <figure class="item" data-groups='["all", "media"]'>
-              <a class="ajax-page-load" href="portfolio-1.html">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Media</small>
-                  <i class="fa fa-file-text-o"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 6 -->
-
-            <!-- Portfolio Item 7 -->
-            <figure class="item" data-groups='["all", "video"]'>
-              <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Nulla Facilisi" class="lightbox mfp-iframe">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Video</small>
-                  <i class="fa fa-video-camera"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 7 -->
-
-            <!-- Portfolio Item 8 -->
-            <figure class="item" data-groups='["all",  "media"]'>
-              <a class="ajax-page-load" href="portfolio-1.html">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Media</small>
-                  <i class="fa fa-file-text-o"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 8 -->
-
-            <!-- Portfolio Item 9 -->
-            <figure class="item" data-groups='["all","illustration"]'>
-              <a href="images/portfolio/9.jpg" class="lightbox" title="Mauris Neque Dolor">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Illustration</small>
-                  <i class="fa fa-image"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 9 -->
-
-            <!-- Portfolio Item 10 -->
-            <figure class="item" data-groups='["all", "video"]'>
-              <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Donec Lectus Arcu" class="lightbox mfp-iframe">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Video</small>
-                  <i class="fa fa-video-camera"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 10 -->
-
-            <!-- Portfolio Item 11 -->
-            <figure class="item" data-groups='["all","illustration"]'>
-              <a href="images/portfolio/11.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Illustration</small>
-                  <i class="fa fa-image"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 11 -->
-
-            <!-- Portfolio Item 12 -->
-            <figure class="item" data-groups='["all","media"]'>
-              <a class="ajax-page-load" href="portfolio-1.html">
-                <img src="{% static 'images/portfolio/tutor/1.png' %}" alt="Tutor">
-                <div>
-                  <h5 class="name">Project Name</h5>
-                  <small>Media</small>
-                  <i class="fa fa-file-text-o"></i>
-                </div>
-              </a>
-            </figure>
-            <!-- /Portfolio Item 12 -->
+            {% for item in portfolio_items %}
+              <figure class="item" data-groups='["all", "{{ item.group.name|lower }}"]'>
+                <a class="ajax-page-load" href="{% url 'portfolio' item.slug %}">
+                  <img src="{% static item.images.all.0.path %}" alt="{{ item.images.all.0.alt_text }}">
+                  <div>
+                    <h5 class="name">{{ item.name }}</h5>
+                    <small>{{ item.group.name }}</small>
+                    <i class="fa fa-{{ item.group.symbol }}"></i>
+                  </div>
+                </a>
+              </figure>
+            {% endfor %}
           </div>
           <!-- /Portfolio Grid -->
 
@@ -570,165 +428,29 @@
           <h5 class="section-description">My Diary</h5>
         </div>
         <div class="blog-masonry">
-          <!-- Blog Post 1 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="{% url 'blog' 'test' %}">
-                  <img class="post-image img-responsive" src="https://lmpixels.com/demo/sunshine-demo/sunshine-version-2/sunshine-html-template/images/blog/blog_post_1.jpg" alt="blog-post-1" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">6</span><span class="month">Dec</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">Travel</a></li>
-                </ul>
-                <a href="{% url 'blog' 'test' %}"><h4 class="blog-item-title">Bootstrap is the Most Popular Framework</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 1 -->
-
-          <!-- Blog Post 2 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_2.jpg" alt="blog-post-2" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">3</span><span class="month">Nov</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">jQuery</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">One Framework, Every Device</h4></a>
+          {% for post in blog_posts %}
+            <div class="item">
+              <div class="blog-card">
+                <div class="media-block">
+                  <a href="{% url 'blog' post.slug %}">
+                    <img class="post-image img-responsive" src="{% static post.image.path %}" alt="{{ post.image.alt_text }}" />
+                    <div class="mask"></div>
+                    <div class="post-date">
+                      <span class="day">{{ post.date|date:'j' }}</span>
+                      <span class="month">{{ post.date|date:'M' }}</span>
+                      <!--<span class="year">2016</span>-->
+                    </div>
+                  </a>
+                </div>
+                <div class="post-info">
+                  <ul class="category">
+                    <li><a href="#">{{ post.tags.all.0.tag }}</a></li>
+                  </ul>
+                  <a href="{% url 'blog' post.slug %}"><h4 class="blog-item-title">{{ post.title }}</h4></a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- End of Blog Post 2 -->
-
-          <!-- Blog Post 3 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_3.jpg" alt="blog-post-3" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">12</span><span class="month">Oct</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">Sport</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">Designed for Everyone, Everywhere</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 3 -->
-
-          <!-- Blog Post 4 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_4.jpg" alt="blog-post-4" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">18</span><span class="month">Aug</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">CSS</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">An Introduction To PostCSS</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 4 -->
-
-          <!-- Blog Post 5 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_5.jpg" alt="blog-post-5" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">2</span><span class="month">Jul</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">                        
-                <ul class="category">
-                  <li><a href="#">CSS3</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">Original and Innovative Web Layouts</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 5 -->
-
-          <!-- Blog Post 6 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_6.jpg" alt="blog-post-6" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">8</span><span class="month">May</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">HTML5</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">Creative and Innovative Navigation Designs</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 6 -->
-
-          <!-- Blog Post 7 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_7.jpg" alt="blog-post-7" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">7</span><span class="month">Apr</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">Design</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">Navigation for Mega-Sites</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 7 -->
-
-          <!-- Blog Post 8 -->
-          <div class="item">
-            <div class="blog-card">
-              <div class="media-block">
-                <a href="blog-post-1.html">
-                  <img class="post-image img-responsive" src="images/blog/blog_post_8.jpg" alt="blog-post-8" />
-                  <div class="mask"></div>
-                  <div class="post-date"><span class="day">21</span><span class="month">Mar</span><!--<span class="year">2016</span>--></div>
-                </a>
-              </div>
-              <div class="post-info">
-                <ul class="category">
-                  <li><a href="#">CSS3</a></li>
-                </ul>
-                <a href="blog-post-1.html"><h4 class="blog-item-title">Front-End Challenge Accepted: CSS 3D Cube</h4></a>
-              </div>
-            </div>
-          </div>
-          <!-- End of Blog Post 8 -->
+          {% endfor %}
         </div>
       </section>
       <!-- End Blog Subpage -->

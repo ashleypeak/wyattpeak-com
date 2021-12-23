@@ -6,33 +6,25 @@
     <a class="blog-back-button" href="{% url 'index' %}#blog"><i class="fa fa-angle-left"></i></a>
 
     <div class="blog-post-main-image">
-      <img class="post-image img-responsive" src="https://lmpixels.com/demo/sunshine-demo/sunshine-version-2/sunshine-html-template/images/blog/blog_post_2_full.jpg" alt="blog-post-1" />
+      <img class="post-image img-responsive" src="{% static post.image.path %}" alt="{{ post.image.alt_text }}" />
     </div>
 
     <div class="blog-post-content">
-      <h1>{{ title }}</h1>
+      <h1>{{ post.title }}</h1>
       <ul class="tags">
-          <li><a>HTML5</a></li>
-          <li><a>CSS3</a></li>
-          <li><a>jQuery</a></li>
-          <li><a>Ajax</a></li>
-          <li><a>PHP5</a></li>
+        {% for tag in post.tags.all %}
+          <li><a>{{ tag.tag }}</a></li>
+        {% endfor %}
       </ul>
+
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a fringilla elit, eu mattis arcu. Curabitur augue augue, scelerisque sit amet varius eget, tristique at nisl. In euismod suscipit tristique. Nulla sollicitudin pretium massa sit amet tristique.</p>
 
-      <p>Aenean porta quam quis tempus posuere. Integer tempor, elit in auctor scelerisque, arcu augue rhoncus mauris, et hendrerit sem tellus vitae eros. Nulla feugiat ultrices posuere. Nullam aliquet dolor orci. Curabitur tincidunt sem et libero dignissim, sed molestie felis ultricies. Phasellus malesuada tellus vitae eros bibendum, nec ultricies massa sollicitudin. Etiam justo neque, faucibus quis urna interdum, interdum rutrum massa. Mauris et velit ac dolor luctus fringilla. Integer in mattis dui, eget eleifend mauris. Fusce sagittis ipsum nec est finibus, vitae congue nunc elementum. Morbi imperdiet nisl sem, at commodo leo posuere a. Maecenas eu laoreet lorem. Aenean fringilla cursus augue, sed mollis dui.</p>
-
-      <blockquote>
-          <p>Vivamus volutpat auctor metus, venenatis ornare mi dictum sit amet. Aliquam erat volutpat.</p>
-          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-      </blockquote>
-
-      <p>Praesent ac quam sed magna gravida interdum. Vivamus sed nunc lobortis, tempor ante ut, gravida nibh. Praesent sed euismod odio. Maecenas dui dui, euismod quis lobortis quis, dignissim ut eros. Curabitur cursus lacinia sollicitudin. Aenean vitae erat imperdiet, egestas nisi non, placerat sapien. In nec commodo justo. Nunc posuere lacinia neque eu malesuada. Sed lacus lacus, tincidunt id faucibus eget, sagittis sed enim. Nunc nec dapibus odio.</p>
+      {{ post.body|linebreaks }}
 
       <div class="post-info">
-        <span class="autor"><i class="fa fa-fw fa-user"></i> John Doe</span>
+        <span class="autor"><i class="fa fa-fw fa-user"></i> Charles Peak</span>
         <span class="divider">|</span>
-        <span class="date"><i class="fa fa-fw fa-clock-o"></i> 12 December, 2016</span>
+        <span class="date"><i class="fa fa-fw fa-clock-o"></i> {{ post.date|date:'j F, Y' }}</span>
         <!-- Share Buttons -->
         <div class="btn-group share-buttons pull-right hidden-xs">
           <a href="#" target="_blank" class="btn"><i class="fa fa-facebook"></i> </a>
