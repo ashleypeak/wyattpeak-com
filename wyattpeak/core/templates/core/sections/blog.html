@@ -1,0 +1,33 @@
+{% load static %}
+
+<section class="pt-page pt-page-4" data-id="blog">
+  <div class="section-title-block">
+    <h2 class="section-title">Blog</h2>
+    <h5 class="section-description">My Diary</h5>
+  </div>
+  <div class="blog-masonry">
+    {% for post in blog_posts %}
+      <div class="item">
+        <div class="blog-card">
+          <div class="media-block">
+            <a href="{% url 'blog' post.slug %}">
+              <img class="post-image img-responsive" src="{% static post.image.path %}" alt="{{ post.image.alt_text }}" />
+              <div class="mask"></div>
+              <div class="post-date">
+                <span class="day">{{ post.date|date:'j' }}</span>
+                <span class="month">{{ post.date|date:'M' }}</span>
+                <!--<span class="year">2016</span>-->
+              </div>
+            </a>
+          </div>
+          <div class="post-info">
+            <ul class="category">
+              <li><a href="#">{{ post.tags.all.0.tag }}</a></li>
+            </ul>
+            <a href="{% url 'blog' post.slug %}"><h4 class="blog-item-title">{{ post.title }}</h4></a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
