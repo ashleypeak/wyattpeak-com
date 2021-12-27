@@ -4,11 +4,24 @@
 {% block main %}
   <div class="pt-wrapper">
     <div class="subpages">
-      {% include 'core/sections/about.html' %}
-      {% include 'core/sections/resume.html' %}
-      {% include 'core/sections/portfolio.html' %}
-      {% include 'core/sections/blog.html' %}
-      {% include 'core/sections/contact.html' %}
+      <section class="pt-page pt-page-1" data-id="about_me">
+        {% include 'core/sections/about-me.html' %}
+      </section>
+      <section class="pt-page pt-page-2" data-id="resume">
+        {% include 'core/sections/resume.html' %}
+      </section>
+      <section class="pt-page pt-page-3" data-id="portfolio">
+        {% include 'core/sections/portfolio.html' %}
+      </section>
+      <section class="pt-page pt-page-4" data-id="code_samples">
+        {% include 'core/sections/code-samples.html' %}
+      </section>
+      <section class="pt-page pt-page-5" data-id="blog">
+        {% include 'core/sections/blog.html' %}
+      </section>
+      <section class="pt-page pt-page-6" data-id="contact">
+        {% include 'core/sections/contact.html' %}
+      </section>
     </div>
   </div>
 {% endblock %}

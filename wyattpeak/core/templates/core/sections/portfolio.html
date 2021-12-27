@@ -1,45 +1,42 @@
 {% load static %}
 
-<section class="pt-page pt-page-3" data-id="portfolio">
-  <div class="section-title-block">
-    <h2 class="section-title">Portfolio</h2>
-    <h5 class="section-description">My Best Works</h5>
-  </div>
+<div class="section-title-block">
+  <h2 class="section-title">Portfolio</h2>
+  <h5 class="section-description">My Best Works</h5>
+</div>
 
-  <!-- Portfolio Content -->
-  <div class="portfolio-content">
-                
-    <!-- Portfolio filter -->
-    <ul id="portfolio_filters" class="portfolio-filters">
-      <li class="active">
-        <a class="filter btn btn-sm btn-link active" data-group="all">All</a>
+<!-- Portfolio Content -->
+<div class="portfolio-content">
+              
+  <!-- Portfolio filter -->
+  <ul id="portfolio_filters" class="portfolio-filters">
+    <li class="active">
+      <a class="filter btn btn-sm btn-link active" data-group="all">All</a>
+    </li>
+    {% for group in portfolio_groups %}
+      <li>
+        <a class="filter btn btn-sm btn-link" data-group="{{ group.name|lower }}">{{ group.name }}</a>
       </li>
-      {% for group in portfolio_groups %}
-        <li>
-          <a class="filter btn btn-sm btn-link" data-group="{{ group.name|lower }}">{{ group.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-    <!-- End of Portfolio filter -->
+    {% endfor %}
+  </ul>
+  <!-- End of Portfolio filter -->
 
-    <!-- Portfolio Grid -->
-    <div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
-      {% for item in portfolio_items %}
-        <figure class="item" data-groups='["all", "{{ item.group.name|lower }}"]'>
-          <a class="ajax-page-load" href="{% url 'portfolio' item.slug %}">
-            <img src="{% static item.images.all.0.path %}" alt="{{ item.images.all.0.alt_text }}">
-            <div>
-              <h5 class="name">{{ item.name }}</h5>
-              <small>{{ item.group.name }}</small>
-              <i class="fa fa-{{ item.group.symbol }}"></i>
-            </div>
-          </a>
-        </figure>
-      {% endfor %}
-    </div>
-    <!-- /Portfolio Grid -->
-
+  <!-- Portfolio Grid -->
+  <div id="portfolio_grid" class="ajax-item-grid portfolio-masonry masonry-grid-3">
+    {% for item in portfolio_items %}
+      <figure class="item" data-groups='["all", "{{ item.group.name|lower }}"]'>
+        <a class="ajax-page-load" href="{% url 'portfolio' item.slug %}">
+          <img src="{% static item.images.all.0.path %}" alt="{{ item.images.all.0.alt_text }}">
+          <div>
+            <h5 class="name">{{ item.name }}</h5>
+            <small>{{ item.group.name }}</small>
+            <i class="fa fa-{{ item.group.symbol }}"></i>
+          </div>
+        </a>
+      </figure>
+    {% endfor %}
   </div>
-  <!-- /Portfolio Content -->
+  <!-- /Portfolio Grid -->
 
-</section>
+</div>
+<!-- /Portfolio Content -->

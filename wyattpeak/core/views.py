@@ -8,6 +8,7 @@ def index(request):
     context = {
         'portfolio_groups': PortfolioGroup.objects.all(),
         'portfolio_items': PortfolioItem.objects.all(),
+        'code_samples': ['test'],
         'blog_posts': BlogPost.objects.all(),
     }
 
@@ -19,9 +20,19 @@ def portfolio(request, slug):
         context = {
             'item': PortfolioItem.objects.get(slug=slug)
         }
-        return render(request, 'core/portfolio.html', context=context)
+        return render(request, 'core/popups/portfolio.html', context=context)
     except PortfolioItem.DoesNotExist:
         return HttpResponse('Portfolio item not found.')
+
+
+def code_sample(request, slug):
+    try:
+        context = {
+            # 'item': PortfolioItem.objects.get(slug=slug)
+        }
+        return render(request, 'core/popups/code-samples.html', context=context)
+    except PortfolioItem.DoesNotExist:
+        return HttpResponse('Code sample not found.')
 
 
 def blog(request, slug):
@@ -29,6 +40,6 @@ def blog(request, slug):
         context = {
             'post': BlogPost.objects.get(slug=slug)
         }
-        return render(request, 'core/blog.html', context=context)
+        return render(request, 'core/popups/blog.html', context=context)
     except BlogPost.DoesNotExist:
         return HttpResponse('Blog post not found.')

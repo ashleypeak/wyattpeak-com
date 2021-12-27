@@ -265,6 +265,10 @@ textarea.form-control, textarea.form-control:focus {
   display: block;
 }
 
+pre {
+  padding: 0px !important;
+}
+
 
 
 /* ============================================================================= 
@@ -405,7 +409,7 @@ textarea.form-control, textarea.form-control:focus {
   height: 0;
 }
 
-.pt-page .portfolio-grid,
+.pt-page .ajax-item-grid,
 .pt-page .blog-masonry {
   display: none;
 }
@@ -424,7 +428,7 @@ textarea.form-control, textarea.form-control:focus {
   min-height: 100%;
 }
 
-.pt-page.pt-page-current .portfolio-grid,
+.pt-page.pt-page-current .ajax-item-grid,
 .pt-page.pt-page-current .blog-masonry {
   display: block;
 }
@@ -1159,18 +1163,18 @@ ul.social-links li:last-child a {
   overflow: auto;
 }
 
-.portfolio-grid {
+.ajax-item-grid {
   margin-left: -0.5em;
   margin-right: -0.5em;
 }
 
-.portfolio-grid figure {
+.ajax-item-grid figure {
   width: 25%;
   float: left;
   padding: 0.5em;
 }
 
-.portfolio-grid img {
+.ajax-item-grid img {
   position: relative;
   display: block;
   width: 100%;
@@ -1203,7 +1207,7 @@ ul.social-links li:last-child a {
 }
 
 /* Direction-Aware Hover Effect */
-.portfolio-grid figure a div {
+.ajax-item-grid figure a div {
   top: 0px;
   left: -100%;
   padding: 5px 20px;
@@ -1214,29 +1218,29 @@ ul.social-links li:last-child a {
   transition: all 0.3s ease-in-out;
 }
 
-.portfolio-grid figure a:hover div {
+.ajax-item-grid figure a:hover div {
   left: 0px;
 }
 
-.portfolio-grid figure {
+.ajax-item-grid figure {
   float: left;
   background: #fff;
   position: relative;
 }
 
-.portfolio-grid figure a,
+.ajax-item-grid figure a,
 .portfolio-rid figure a img {
   display: block;
   position: relative;
 }
 
-.portfolio-grid figure a {
+.ajax-item-grid figure a {
   position: relative;
   display: block;
   overflow: hidden;
 }
 
-.portfolio-grid figure a div {
+.ajax-item-grid figure a div {
   position: absolute;
   background: #4f565e;
   background: rgba(79,86,94,0.7);
@@ -1244,14 +1248,14 @@ ul.social-links li:last-child a {
   height: 100%;
   color: #888;
 }
-.portfolio-grid figure a div h5 {
+.ajax-item-grid figure a div h5 {
   display: inline-block;
   font-size: 1rem;
   margin: 10px 0;
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-.portfolio-grid figure a div h5:after {
+.ajax-item-grid figure a div h5:after {
   display: block;
   content: '';
   width: 100%;
@@ -1259,14 +1263,14 @@ ul.social-links li:last-child a {
   margin: 0 auto;
   background-color: #ffcd38;
 }
-.portfolio-grid figure a div small {
+.ajax-item-grid figure a div small {
   color: #eee;
   position: absolute;
   bottom: 10px;
   left: 20px;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-.portfolio-grid figure a div i {
+.ajax-item-grid figure a div i {
   color: #eee;
   position: absolute;
   bottom: 14px;
@@ -1274,7 +1278,7 @@ ul.social-links li:last-child a {
   margin: 0;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-.portfolio-grid figure a div span {
+.ajax-item-grid figure a div span {
   display: block;
   padding: 10px 0;
   text-transform: uppercase;
@@ -1650,7 +1654,7 @@ ul.social-links li:last-child a {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.portfolio-nav .portfolio-close-button a {
+.portfolio-nav .ajax-item-close-button a {
   display: block;
   height: 30px;
   width: 30px;
@@ -1659,12 +1663,12 @@ ul.social-links li:last-child a {
   color: #888;
 }
 
-.portfolio-nav .portfolio-close-button a:hover {
+.portfolio-nav .ajax-item-close-button a:hover {
   background-color: #ffcd38;
   color: #fff;
 }
 
-.portfolio-nav .portfolio-close-button a i {
+.portfolio-nav .ajax-item-close-button a i {
   line-height: 30px;
   font-size: 18px;
 }
@@ -1911,7 +1915,7 @@ blockquote {
     margin-left: 26%;
   }
 
-  .portfolio-grid figure {
+  .ajax-item-grid figure {
     width: 33.33333%;
   }
 
@@ -2066,7 +2070,7 @@ blockquote {
 }
 
 @media only screen and (max-width: 769px) {
-  .portfolio-grid figure {
+  .ajax-item-grid figure {
     width: 50%;
   }
 
@@ -2086,7 +2090,7 @@ blockquote {
 }
 
 @media only screen and (max-width: 480px) {
-  .portfolio-grid figure {
+  .ajax-item-grid figure {
     width: 100%;
   }
 

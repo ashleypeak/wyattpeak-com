@@ -33,12 +33,18 @@ var PageTransitions = (function ($) {
             ajaxLoadedContent.addClass('fadeInLeft');
         }
 
-        var href = $('#portfolio_grid figure a').each(function(){
+        var href = $('.ajax-item-grid figure a').each(function(){
             href = $(this).attr('href');
             if(`/${hash}/`==href){
                 var toLoad =  $(this).attr('href');
                 showContent();
-                ajaxLoadedContent.load(toLoad);
+                ajaxLoadedContent.load(toLoad, function() {
+                    hljs.highlightAll();
+                });
+                $('pre code').each(function(el) {
+                    print(el);
+                    hljs.highlightElement(el);
+                })
                 return false;
             } 
         });
@@ -116,7 +122,7 @@ var PageTransitions = (function ($) {
         $('#page').append('<div id="page-ajax-loaded" class="page-ajax-loaded animated fadeInLeft"></div>');
         ajaxLoader();
 
-        $(document).on("click","#portfolio-close-button", function () {
+        $(document).on("click",".ajax-item-close-button", function () {
             $('#page-ajax-loaded').addClass('fadeOutLeft');
             $('#page-ajax-loaded > div').detach();
         });

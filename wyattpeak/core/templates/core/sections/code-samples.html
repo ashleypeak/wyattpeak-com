@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="section-title-block">
+  <h2 class="section-title">Code Samples</h2>
+  <h5 class="section-description">See How I Work</h5>
+</div>
+
+<div>
+  <div id="code_sample_grid" class="ajax-item-grid">
+    {% for sample in code_samples %}
+      <figure class="item">
+        <a class="ajax-page-load" href="{% url 'code_samples' 'slug' %}">
+          <img src="{% static portfolio_items.0.images.all.0.path %}" alt="ALTTEXT">
+          <div>
+            <h5 class="name">{{ sample }}</h5>
+            <small>{{ sample }}</small>
+            <i class="fa fa-{{ item.group.symbol }}"></i>
+          </div>
+        </a>
+      </figure>
+    {% endfor %}
+  </div>
+</div>
