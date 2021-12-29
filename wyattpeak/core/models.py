@@ -11,7 +11,7 @@ class PortfolioGroup(models.Model):
 
 class PortfolioItem(models.Model):
     slug = models.SlugField()
-    group = models.OneToOneField(PortfolioGroup, on_delete=models.RESTRICT)
+    group = models.ForeignKey(PortfolioGroup, on_delete=models.RESTRICT)
     name = models.CharField(max_length=200)
     url = models.URLField(blank=True)
     date = models.DateField()
