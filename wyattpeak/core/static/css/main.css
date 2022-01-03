@@ -865,6 +865,7 @@ ul.social-links li:last-child a {
   opacity: 0.4;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  height: 80px;
 }
 
 .client_block:hover {
