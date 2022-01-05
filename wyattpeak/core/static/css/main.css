@@ -866,14 +866,19 @@ ul.social-links li:last-child a {
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
   height: 80px;
+  display: flex;
 }
 
 .client_block:hover {
   opacity: 1;
 }
 
+.client_block a {
+  margin: auto;
+}
+
 .client_block img {
-  max-width: 80px;
+  width: 80px;
 }
 /* /Clients */
 
